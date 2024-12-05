@@ -1,92 +1,164 @@
 # Documentação do Projeto
 
-- **Data de Execução:** 26/11/2024  
-- **Aluno:** Alysson Rodrigo 
-
-## Configuração do Projeto com Reactstrap
-
-### Passos Realizados
-1. Substituímos o uso do componente `Media` pelo `Card` no arquivo `MenuComponent.js`.
-2. Adicionamos um arquivo `dishes.js` para centralizar as informações dos pratos, simulando uma base de dados.
-3. Atualizamos o arquivo `App.js` para passar as informações dos pratos como *props* para o componente `Menu`.
-4. Configuramos o CSS do Bootstrap para estilizar os componentes.
+- **Data de Execução:** 04/12/2024  
+- **Aluno:** Alysson Rodrigo
 
 ---
 
-## Aula 10 - React Components
+## **Configuração do Projeto com React**
 
-### Descrição das Alterações
-Nesta aula, realizamos diversas alterações no projeto para implementar a exibição de um menu utilizando o componente `Card` do Reactstrap. As principais mudanças foram:
-
-- Substituímos o uso do componente `Media` pelo `Card` no arquivo `MenuComponent.js`.
-- Criamos o arquivo `dishes.js` para centralizar as informações dos pratos, simulando uma base de dados.
-- Atualizamos o arquivo `App.js` para passar as informações dos pratos como *props* para o componente `Menu`.
-- Configuramos o CSS do Bootstrap para estilizar os componentes.
+### **Passos Realizados**
+1. Criamos o componente `Header` para exibir o título "Gerenciador de Tarefas".  
+2. Desenvolvemos o componente `TaskContainer` para exibir uma lista de tarefas fictícias com título e descrição.  
+3. Atualizamos o arquivo `App.js` para importar e renderizar os componentes `Header` e `TaskContainer`.  
+4. Aplicamos estilização utilizando CSS inline diretamente nos componentes para um layout simples e funcional.  
 
 ---
 
-## **MenuComponent.js**
+## **Aula 16 - Criando um Gerenciador de Tarefas com React**
 
-### Descrição
-Este arquivo contém o componente `Menu`, responsável por exibir os pratos do menu em formato de cartões (*cards*). Ele é a interface principal para o usuário visualizar os pratos disponíveis.
+### **Descrição das Alterações**
+Nesta aula, construímos um gerenciador de tarefas simples em React. As principais mudanças realizadas foram:  
 
-### Perguntas e Respostas
+- Criamos o componente `Header`, que exibe o título do aplicativo na parte superior.  
+- Criamos o componente `TaskContainer`, que renderiza dinamicamente uma lista de tarefas fictícias.  
+- Estilizamos os componentes com CSS inline, utilizando objetos JavaScript na propriedade `style`.  
+
+---
+
+## **Header.js**
+
+### **Descrição**
+O componente `Header` é responsável por exibir o título "Gerenciador de Tarefas" na parte superior do aplicativo.  
+
+### **Perguntas e Respostas**
 
 #### **Quais os imports utilizados?**
-- `React`, `{ useState }`: Importa o React e o hook `useState` para gerenciar o estado interno do componente.
-- `Card`, `CardImg`, `CardImgOverlay`, `CardBody`, `CardTitle`: Importados do `reactstrap`, são usados para criar os *cards* interativos.
+- `React`: Importado para criar o componente funcional.  
 
 #### **Há componentes? O que fazem?**
-- Sim, o componente principal é o `Menu`. Ele renderiza os pratos em formato de *cards* utilizando os dados fornecidos como *props*.
+- Sim, o componente principal é o `Header`. Ele renderiza um título estilizado.  
 
-#### **Para que serve o `onDishSelect` no projeto?**
-- Ele altera o estado do componente com o prato selecionado, permitindo interações futuras (ex.: exibir detalhes do prato).
-
-#### **Para que serve o `renderDish`?**
-- É uma função que renderiza os detalhes do prato selecionado dentro de um *card*, se houver um prato selecionado.
-
-#### **Para que serve o `props.dishes.map`?**
-- Ele itera sobre a lista de pratos (`dishes`) fornecida como *props* e renderiza cada prato em um *card*.
+#### **Como o estilo foi aplicado?**
+- Usamos CSS inline, configurado diretamente no componente através de um objeto `headerStyle`.  
 
 ---
 
-## **dishes.js**
+### **Bloco de Código**
 
-### Descrição
-Este arquivo contém uma lista de objetos que representam os pratos do menu, simulando uma base de dados.
+```javascript
+import React from 'react';
 
-### Perguntas e Respostas
+function Header() {
+return (
+    <header style={headerStyle}>
+    <h1>Gerenciador de tarefas</h1>
+    </header>
+);
+}
 
-#### **Quais as propriedades?**
-- Cada prato possui as seguintes propriedades:
-  - `id`
-  - `name`
-  - `image`
-  - `category`
-  - `label`
-  - `price`
-  - `description`
+const headerStyle = {
+backgroundColor: '#000080',
+color: 'white',
+textAlign: 'center',
+padding: '10px',
+};
 
-#### **Que tipo de dado é utilizado?**
-- A lista de pratos (`DISHES`) é um array de objetos. As propriedades são:
-  - Strings (`name`, `image`, `category`, etc.).
-  - Números (`price`, `id`).
-  - Arrays (ex.: `comments`).
+export default Header;
+---
+## **TaskContainer.js**
+
+Descrição
+O TaskContainer é responsável por exibir uma lista de tarefas fictícias com título e descrição.
+
+Perguntas e Respostas
+Quais os imports utilizados?
+React: Importado para criar o componente funcional.
+
+Há componentes? O que fazem?
+Sim, o componente TaskContainer renderiza dinamicamente as tarefas em uma lista estilizada.
+
+Como as tarefas são exibidas?
+Elas são definidas em um array de objetos e renderizadas dinamicamente usando o método .map().
+
+Como o estilo foi aplicado?
+Usamos CSS inline para estilizar as tarefas e o contêiner principal.
+
+**bloco de código**
+
+import React from 'react';
+
+function TaskContainer() {
+return (
+    <div style={containerStyle}>
+    <React.Fragment>
+        <div style={taskStyle}>
+        <h3>atividade 1:Gerenciador de Programação</h3>
+        <p> aprender os conceitos básicos do React, como componentes , props e estado.</p>
+        </div>
+        <div style={taskStyle}>
+        <h3>atividade 2:finalizando projeto de Front-end </h3>
+        <p>Elaborar refeições compactas e nutritivas para os astronautas durante a viagem.</p>
+        </div>
+    </React.Fragment>
+    </div>
+);
+}
+
+// Estilos opcionais
+const containerStyle = {
+margin: '20px auto',
+padding: '10px',
+maxWidth: '600px',
+backgroundColor: '#f4f4f4',
+borderRadius: '8px',
+};
+
+const taskStyle = {
+backgroundColor: '#fff',
+padding: '10px',
+margin: '10px 0',
+border: '1px solid #ccc',
+borderRadius: '4px',
+};
+
+export default TaskContainer;
 
 ---
 
-## **App.js**
+App.js
 
-### Descrição
-Este arquivo é o ponto de entrada do projeto. Ele configura o layout principal e passa os dados necessários para os componentes.
+Descrição
+O App.js é o ponto de entrada do aplicativo. Ele organiza e renderiza os componentes principais do projeto (Header e TaskContainer).
 
-### Perguntas e Respostas
+Perguntas e Respostas
+Quais os imports utilizados?
+React: Importado para criar o componente funcional.
+Header, TaskContainer: Componentes personalizados, importados para renderização.
 
-#### **Para que serve o `const [dishes]`?**
-- Ele armazena a lista de pratos importada de `dishes.js` no estado do componente, permitindo que ela seja passada como *props* para outros componentes.
+Como o layout foi configurado?
+Os componentes Header e TaskContainer foram renderizados dentro de uma div principal.
 
-#### **Como funciona o `<Menu dishes={dishes} />`?**
-- O componente `Menu` é chamado e recebe os dados dos pratos como `props.dishes`. Dentro de `Menu`, esses dados são utilizados para renderizar os *cards* de cada prato.
+## **Bloco de código**
+
+import React from 'react';
+import Header from './components/Header';
+import TaskContainer from './components/TaskContainer';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <TaskContainer />
+    </div>
+  );
+}
+
+export default App;
+---
+[print site ](imagem.png-1.jpeg)
 
 
-![Texto Alternativo](imagem.png.jpeg)
+**Estilização do Projeto**
+
+A estilização foi realizada por meio de CSS inline, o que significa que os estilos foram inseridos diretamente nos componentes React utilizando a propriedade style. Essa metodologia proporciona uma maneira prática e ágil de aplicar estilos, dispensando a necessidade de arquivos CSS separados. Cada componente possui seus próprios estilos, o que simplifica o código e facilita a sua compreensão. Contudo, apesar de o CSS inline funcionar bem em projetos menores, em projetos de maior envergadura, pode ser necessário implementar outras abordagens, como a utilização de arquivos CSS externos ou bibliotecas de estilização, para assegurar uma melhor organização e escalabilidade do código.
