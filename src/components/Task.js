@@ -5,12 +5,12 @@ return (
     <div style={containerStyle}>
     <React.Fragment>
         <div style={taskStyle}>
-        <h3>Planejar Viagem para Marte</h3>
-        <p>Definir a lista de equipamentos necessários para a expedição ao planeta vermelho.</p>
+        <h3>Gerenciador de programação</h3>
+        <p>aprender os conceitos básicos do React, como componentes , props e estado.</p>
         </div>
         <div style={taskStyle}>
-        <h3>Preparar Cardápio Intergaláctico</h3>
-        <p>Elaborar refeições compactas e nutritivas para os astronautas durante a viagem.</p>
+        <h3>atividade 2:finalizando projeto de Front-end </h3>
+        <p>concluir o desenvolvimento do projeto de front end usando HTML , CSS e JavaScript.</p>
         </div>
     </React.Fragment>
     </div>

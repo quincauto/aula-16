@@ -10,7 +10,7 @@ return (
         </div>
         <div style={taskStyle}>
         <h3>atividade 2:finalizando projeto de Front-end </h3>
-        <p>Elaborar refeições compactas e nutritivas para os astronautas durante a viagem.</p>
+        <p>concluir o desenvolvimento do projeto de front end usando HTML , CSS e JavaScript.</p>
         </div>
     </React.Fragment>
     </div>
@@ -35,3 +35,6 @@ borderRadius: '4px',
 };
 
 export default TaskContainer;
+
+
+
