@@ -88,7 +88,8 @@ export default App;
 ```
 # print do site 
 
-src\imagem.jpeg
+![Texto alternativo](src/imagem.jpeg)
+
 ---
 
 # Configuração do Projeto com React
@@ -237,7 +238,8 @@ export default App;
 
 # Site Funcionando 
 
-src\imagen.jpeg
+![Texto alternativo](src/imagen.jpeg)
+
 ---
 
 # Estilização do Projeto
